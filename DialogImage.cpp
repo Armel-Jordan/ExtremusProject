@@ -206,13 +206,13 @@ void CDialogImage::OnLButtonDown(UINT nFlags, CPoint point)
 				UpdateData(FALSE);
 			}
 			else {
-				throw MesException(" Cliquez sur ClearROI pour recommencer.");
+				throw MesException(" vous ne pouvez que selectionner 2 points.");
 			}
 
 		}
 		catch (MesException e) {
 
-			MessageBox(TEXT((std::string(e.message)).c_str()), TEXT("Erreur !"), NULL);
+			MessageBox(TEXT((std::string(e.message)).c_str()), TEXT("Error !"), NULL);
 		}
 	}
 
@@ -340,7 +340,7 @@ void CDialogImage::AfficheCourbe(float* fonct)
 	CPen penLine2;
 
 	//penLine2.CreatePen(PS_SOLID, 2, RGB(255, 255, 2550));
-	penLine2.CreatePen(PS_SOLID, HIST_SIZE_RATIO, RGB(255, 255, 2550));
+	penLine2.CreatePen(PS_SOLID, HIST_SIZE_RATIO, RGB(200, 150, 220));
 	ClientDC.SelectObject(&penLine2);
 
 	ClientDC.MoveTo(HIST_X_OFFSET, HIST_Y_OFFSET - (HIST_HEIGTH * HIST_SIZE_RATIO / 2));
@@ -364,7 +364,7 @@ void CDialogImage::AfficheCourbe(float* fonct)
 
 void CDialogImage::ClearROI()
 {
-	MessageBox(TEXT((std::string("Actualisation de l'image")).c_str()), TEXT("Chargement en cours"), NULL);
+	MessageBox(TEXT((std::string("Appuyer sur ok pour actauliser la page")).c_str()), TEXT("Refresh la page"), NULL);
 
 	OnPaint();
 
@@ -497,11 +497,11 @@ void CDialogImage::ChercherSeuil()
 		string message = " Insuffisant. Sélectionnez une nouvelle zone. ";
 
 		if (filtreRecommande == -1)
-			MessageBox(TEXT(message.c_str()), TEXT("Erreur !"), NULL);
+			MessageBox(TEXT(message.c_str()), TEXT("Error !"), NULL);
 		else {
-			message = " Filtre recommandé : ";
+			message = " Filtre est : ";
 			message += std::to_string(filtreRecommande);
-			MessageBox(TEXT(message.c_str()), TEXT("Erreur !"), NULL);
+			MessageBox(TEXT(message.c_str()), TEXT("Error !"), NULL);
 		}
 	}
 }
@@ -516,7 +516,7 @@ int CDialogImage::Filtre(int filtreTest)
 	{
 		zero1 = Util::rtbis(derive, 1, 128, 1);
 		zero2 = Util::rtbis(derive, 129, 256, 1);
-		string message = " Filtre recommandé : " + std::to_string(filtreTest);
+		string message = " Filtre est : " + std::to_string(filtreTest);
 
 	}
 	catch (MesException e)
@@ -705,7 +705,7 @@ void CDialogImage::OnBnClickedButtonAuto()
 		UpdateData(TRUE);
 		filtre = Filtre(filtre);
 		Lissage(filtre);
-		AfficheHistogramme(histogrammeLisse, RGB(0, 255, 0));
+		AfficheHistogramme(histogrammeLisse,RGB(51, 76, 255));
 		Derive(filtre);
 		AfficheCourbe(derive);
 

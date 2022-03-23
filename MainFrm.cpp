@@ -22,8 +22,6 @@ IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	//{{AFX_MSG_MAP(CMainFrame)
 	ON_COMMAND(ID_IMAGE_OUVRIR_AFFICHER, OnImageOuvrirAfficher)
-	//}}AFX_MSG_MAP
-	ON_COMMAND(ID_IMAGE_OUVRIRAUTOMATIQUEMENT, &CMainFrame::OnImageOuvrirautomatiquement)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -93,20 +91,4 @@ void CMainFrame::OnImageOuvrirAfficher()
 	}
 	else AfxMessageBox("aucune image n'a été ouverte");
 
-}
-
-
-void CMainFrame::OnImageOuvrirautomatiquement()
-{
-	// TODO: Add your command handler code here
-	CString pPathName;
-
-	pPathName = "D:\\Dropbox\\UQTR\\PRO1027\\Ftp\\Exemples\\prof.pgm";
-
-	if (Image1.lecture(pPathName))
-	{
-		ImageOuverte = true;
-		CDialogImage DialogImage1(&Image1);
-		DialogImage1.DoModal();
-	}
 }

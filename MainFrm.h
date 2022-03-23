@@ -49,9 +49,6 @@ protected:
 	//{{AFX_MSG(CMainFrame)
 	afx_msg void OnImageOuvrirAfficher();
 	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
-public:
-	afx_msg void OnImageOuvrirautomatiquement();
 };
 
 /////////////////////////////////////////////////////////////////////////////
