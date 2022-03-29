@@ -100,6 +100,7 @@ BEGIN_MESSAGE_MAP(CDialogImage, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON5, &CDialogImage::OnBnClickedButtonMethodeOtsu)
 	ON_BN_CLICKED(IDC_BUTTON8, &CDialogImage::OnBnClickedButtonAppliquerOtsu)
 	ON_BN_CLICKED(IDC_BUTTON9, &CDialogImage::OnBnClickedButtonAuto)
+
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////

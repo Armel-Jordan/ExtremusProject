@@ -15,14 +15,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// CMainFrame
+//CMainFrame
 
-IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
+//IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 
-BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
-	//{{AFX_MSG_MAP(CMainFrame)
-	ON_COMMAND(ID_IMAGE_OUVRIR_AFFICHER, OnImageOuvrirAfficher)
-END_MESSAGE_MAP()
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame construction/destruction
@@ -70,7 +67,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 void CMainFrame::OnImageOuvrirAfficher()
 {
 	CString pPathName;
-	CString strFileExtension;
+	CString	strFileExtension;
 	ImageOuverte = false;
 	static char BASED_CODE szFilter[] = "Fichiers .pgm |*.pgm||";
 	CFileDialog dlg(TRUE, "pgm", NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, szFilter);
@@ -92,3 +89,7 @@ void CMainFrame::OnImageOuvrirAfficher()
 	else AfxMessageBox("aucune image n'a été ouverte");
 
 }
+ #define BEGIN_MESSAGE_MAP(CMainFrame,CFrameWnd)
+		
+              ON_COMMAND(ID_IMAGE_OUVRIR_AFFICHER, OnImageOuvrirAfficher)
+#define END_MESSAGE_MAP()

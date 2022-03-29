@@ -27,7 +27,7 @@
 #define IDC_BUTTON9                     1025
 #define ID_IMAGE_OUVRIRETAFFICHER       32771
 #define ID_IMAGE_OUVRIR_AFFICHER        32771
-#define ID_IMAGE_OUVRIRAUTOMATIQUEMENT  32772
+
 
 // Next default values for new objects
 //
