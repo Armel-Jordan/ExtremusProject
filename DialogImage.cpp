@@ -64,7 +64,7 @@ CDialogImage::CDialogImage(int largeur, int longueur, CImageReelle* pImage, CWnd
 void CDialogImage::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CDialogImage)
+	/*{{AFX_DATA_MAP(CDialogImage)*/
 	// NOTE: the ClassWizard will add DDX and DDV calls here
 
 	DDX_Text(pDX, IDC_EDIT1, initialX);
