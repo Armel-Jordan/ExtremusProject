@@ -27,12 +27,12 @@ public:
 public:
 
 	// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CMainFrame)
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(CMainFrame)
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	//}}AFX_VIRTUAL
 
-	// Implementation
+// Implementation
 public:
 	virtual ~CMainFrame();
 #ifdef _DEBUG
@@ -49,6 +49,7 @@ protected:
 	//{{AFX_MSG(CMainFrame)
 	afx_msg void OnImageOuvrirAfficher();
 	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////
